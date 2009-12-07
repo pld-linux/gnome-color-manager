@@ -11,12 +11,16 @@ BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.73
+BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.14.0
+BuildRequires:	gnome-common
 BuildRequires:	gnome-desktop-devel >= 2.14.0
+BuildRequires:	gnome-doc-utils
 BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	gtk-doc >= 1.7
+BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libunique-devel >= 1.0.0
 BuildRequires:	pkgconfig
