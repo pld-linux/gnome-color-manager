@@ -1,11 +1,11 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
-Version:	2.29.4
+Version:	2.30.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/2.29/%{name}-%{version}.tar.bz2
-# Source0-md5:	60ab898054353f9f8088bfed872b870f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/2.30/%{name}-%{version}.tar.bz2
+# Source0-md5:	ef6262e7946c714c0919907ad8ce8078
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.63
@@ -24,12 +24,14 @@ BuildRequires:	gtk-doc >= 1.9
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	lcms-devel
 BuildRequires:	libcanberra-gtk-devel >= 0.10
+BuildRequires:	libnotify-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool
 BuildRequires:	libunique-devel >= 1.0.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	sane-backends-devel
 BuildRequires:	udev-glib-devel
 BuildRequires:	vte-devel >= 0.22.2
 BuildRequires:	xorg-lib-libXrandr-devel
