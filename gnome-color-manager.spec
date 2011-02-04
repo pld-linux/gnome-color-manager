@@ -1,7 +1,7 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
 Version:	2.32.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/2.32/%{name}-%{version}.tar.bz2
@@ -37,6 +37,7 @@ BuildRequires:	vte-devel >= 0.22.2
 BuildRequires:	xorg-lib-libXrandr-devel
 BuildRequires:	xorg-lib-libXxf86vm-devel
 Requires(post,postun):	desktop-file-utils
+Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,preun):	GConf2
 Requires:	gtk+2 >= 2:2.14.0
