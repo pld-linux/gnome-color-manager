@@ -5,7 +5,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/2.91/%{name}-%{version}.tar.bz2
-# Source0-md5:	dda18a8c6a07bf54276ee481dab83091
+# Source0-md5:	e3638a6baf6cb53ed4022ea8fbefa940
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.9
