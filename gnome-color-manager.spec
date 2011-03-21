@@ -1,11 +1,11 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
-Version:	2.91.90
+Version:	2.91.92
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/2.91/%{name}-%{version}.tar.bz2
-# Source0-md5:	e3638a6baf6cb53ed4022ea8fbefa940
+# Source0-md5:	81bd550f539930d7534b3ab61782ae36
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.9
@@ -66,18 +66,6 @@ GNOME Color Manager development files.
 %description devel -l pl.UTF-8
 Pliki programistyczne GNOME Color Manager.
 
-%package apidocs
-Summary:	color-glib library API documentation
-Summary(pl.UTF-8):	Dokumentacja API biblioteki color-glib
-Group:		Documentation
-Requires:	gtk-doc-common
-
-%description apidocs
-color-glib library API documentation.
-
-%description apidocs -l pl.UTF-8
-Dokumentacja API biblioteki color-glib.
-
 %prep
 %setup -q
 
@@ -92,9 +80,7 @@ mkdir m4
 %configure \
 	--disable-silent-rules \
 	--disable-schemas-compile \
-	--disable-static \
-	--enable-gtk-doc \
-	--with-html-dir=%{_gtkdocdir}
+	--disable-static
 %{__make}
 
 %install
@@ -102,8 +88,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-%{__mv} $RPM_BUILD_ROOT%{_libdir}/gnome-settings-daemon-{2,3}.0
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/control-center-1/panels/*.la
@@ -166,7 +150,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.gnome.ColorManager.xml
 %{_includedir}/libcolor-glib
 %{_pkgconfigdir}/libcolor-glib.pc
-
-%files apidocs
-%defattr(644,root,root,755)
-%{_gtkdocdir}/libcolor-glib
