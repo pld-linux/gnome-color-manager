@@ -142,6 +142,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/*/*.png
 %{_iconsdir}/hicolor/*/*/*.svg
 %{_mandir}/man1/*.1*
+/var/lib/color
 
 %files devel
 %defattr(644,root,root,755)
