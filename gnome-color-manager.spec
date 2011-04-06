@@ -131,6 +131,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/udev/rules.d/95-gcm-devices.rules
 %{_sysconfdir}/xdg/autostart/gcm-apply.desktop
 %{_datadir}/GConf/gsettings/org.gnome.color-manager.gschema.migrate
+%{_datadir}/dbus-1/interfaces/org.gnome.ColorManager.xml
 %{_datadir}/dbus-1/services/org.gnome.ColorManager.service
 %{_datadir}/glib-2.0/schemas/org.gnome.color-manager.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.settings-daemon.plugins.color.gschema.xml
@@ -147,6 +148,5 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libcolor-glib.so
-%{_datadir}/dbus-1/interfaces/org.gnome.ColorManager.xml
 %{_includedir}/libcolor-glib
 %{_pkgconfigdir}/libcolor-glib.pc
