@@ -43,6 +43,7 @@ Requires(post,postun):	glib2 >= 1:2.26.0
 Requires:	dconf
 Requires:	hicolor-icon-theme
 Requires:	polkit-gnome
+Suggests:	shared-color-profiles
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -143,7 +144,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/*/*.png
 %{_iconsdir}/hicolor/*/*/*.svg
 %{_mandir}/man1/*.1*
-/var/lib/color
 
 %files devel
 %defattr(644,root,root,755)
