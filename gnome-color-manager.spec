@@ -1,14 +1,15 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
-Version:	3.0.0
+Version:	3.1.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	6195fc713212afd189fd280977e85c92
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.1/%{name}-%{version}.tar.bz2
+# Source0-md5:	30684b49a17812cb7fe2f3def872caa9
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.9
+BuildRequires:	colord-devel
 BuildRequires:	cups-devel
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
@@ -23,7 +24,7 @@ BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.9
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	lcms2-devel
+BuildRequires:	lcms2-devel >= 2.2
 BuildRequires:	libcanberra-gtk3-devel >= 0.10
 BuildRequires:	libnotify-devel >= 0.7.0
 BuildRequires:	libtiff-devel
@@ -40,6 +41,7 @@ BuildRequires:	xorg-lib-libXxf86vm-devel
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
+Requires:	colord
 Requires:	dconf
 Requires:	hicolor-icon-theme
 Requires:	polkit-gnome
@@ -51,28 +53,12 @@ GNOME Color Manager is a session framework for the GNOME desktop
 environment that makes it easy to manage easy to manage, install and
 generate color profiles.
 
-%package devel
-Summary:	GNOME Color Manager development files
-Summary(pl.UTF-8):	Pliki programistyczne GNOME Color Manager
-Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 1:2.26.0
-Requires:	lcms2-devel
-Requires:	libusb-devel
-Requires:	udev-glib-devel
-
-%description devel
-GNOME Color Manager development files.
-
-%description devel -l pl.UTF-8
-Pliki programistyczne GNOME Color Manager.
-
 %prep
 %setup -q
 
 %build
-%{__intltoolize}
 %{__libtoolize}
+%{__intltoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
@@ -88,10 +74,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/control-center-1/panels/*.la
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/gnome-settings-daemon-3.0/*.la
 
 %find_lang %{name} --with-gnome --with-omf
 
@@ -113,40 +95,21 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/gcm-apply
+%attr(755,root,root) %{_bindir}/gcm-calibrate
 %attr(755,root,root) %{_bindir}/gcm-import
 %attr(755,root,root) %{_bindir}/gcm-inspect
 %attr(755,root,root) %{_bindir}/gcm-picker
-%attr(755,root,root) %{_bindir}/gcm-viewer
 %attr(755,root,root) %{_bindir}/gcm-session
-%attr(755,root,root) %{_libdir}/libcolor-glib.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcolor-glib.so.1
+%attr(755,root,root) %{_bindir}/gcm-viewer
 %attr(755,root,root) %{_libexecdir}/gcm-helper-exiv
-%attr(755,root,root) %{_libdir}/control-center-1/panels/libcolor.so
-%attr(755,root,root) %{_libdir}/gnome-settings-daemon-3.0/libcolor.so
-%{_libdir}/gnome-settings-daemon-3.0/color.gnome-settings-plugin
-%attr(755,root,root) %{_sbindir}/gcm-install-system-wide
-%attr(755,root,root) /lib/udev/gcm-udev-ddc
-/lib/udev/rules.d/55-gcm-i2c.rules
-/lib/udev/rules.d/95-gcm-colorimeters.rules
-/lib/udev/rules.d/95-gcm-devices.rules
-%{_sysconfdir}/xdg/autostart/gcm-apply.desktop
-%{_datadir}/GConf/gsettings/org.gnome.color-manager.gschema.migrate
+%{_sysconfdir}/xdg/autostart/gcm-session.desktop
+%{_datadir}/gnome-color-manager
 %{_datadir}/dbus-1/interfaces/org.gnome.ColorManager.xml
 %{_datadir}/dbus-1/services/org.gnome.ColorManager.service
-%{_datadir}/glib-2.0/schemas/org.gnome.color-manager.gschema.xml
-%{_datadir}/glib-2.0/schemas/org.gnome.settings-daemon.plugins.color.gschema.xml
-%{_datadir}/gnome-color-manager
-%{_datadir}/polkit-1/actions/org.gnome.color.policy
+%{_desktopdir}/gcm-calibrate.desktop
 %{_desktopdir}/gcm-import.desktop
-%{_desktopdir}/gcm-prefs.desktop
+%{_desktopdir}/gcm-picker.desktop
 %{_desktopdir}/gcm-viewer.desktop
 %{_iconsdir}/hicolor/*/*/*.png
 %{_iconsdir}/hicolor/*/*/*.svg
 %{_mandir}/man1/*.1*
-
-%files devel
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libcolor-glib.so
-%{_includedir}/libcolor-glib
-%{_pkgconfigdir}/libcolor-glib.pc
