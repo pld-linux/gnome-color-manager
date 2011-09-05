@@ -1,15 +1,15 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
-Version:	3.1.2
+Version:	3.1.91
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.1/%{name}-%{version}.tar.bz2
-# Source0-md5:	30684b49a17812cb7fe2f3def872caa9
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.1/%{name}-%{version}.tar.xz
+# Source0-md5:	f4af1b04698eed208bfbe6ab3a272baf
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	colord-devel
+BuildRequires:	colord-devel >= 0.1.12
 BuildRequires:	cups-devel
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
@@ -41,11 +41,12 @@ BuildRequires:	xorg-lib-libXxf86vm-devel
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
-Requires:	colord
+Requires:	colord >= 0.1.12
 Requires:	dconf
 Requires:	hicolor-icon-theme
 Requires:	polkit-gnome
 Suggests:	shared-color-profiles
+Obsoletes:	gnome-color-manager-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -99,12 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gcm-import
 %attr(755,root,root) %{_bindir}/gcm-inspect
 %attr(755,root,root) %{_bindir}/gcm-picker
-%attr(755,root,root) %{_bindir}/gcm-session
 %attr(755,root,root) %{_bindir}/gcm-viewer
 %attr(755,root,root) %{_libexecdir}/gcm-helper-exiv
-%{_sysconfdir}/xdg/autostart/gcm-session.desktop
 %{_datadir}/gnome-color-manager
-%{_datadir}/dbus-1/interfaces/org.gnome.ColorManager.xml
 %{_datadir}/dbus-1/services/org.gnome.ColorManager.service
 %{_desktopdir}/gcm-calibrate.desktop
 %{_desktopdir}/gcm-import.desktop
