@@ -1,43 +1,39 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
-Version:	3.1.91
+Version:	3.1.92
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.1/%{name}-%{version}.tar.xz
-# Source0-md5:	f4af1b04698eed208bfbe6ab3a272baf
+# Source0-md5:	f4133d2efd75eb573417301054965e95
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	colord-devel >= 0.1.12
-BuildRequires:	cups-devel
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
 BuildRequires:	exiv2-devel
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gnome-common
-BuildRequires:	gnome-control-center-devel >= 3.0.0
 BuildRequires:	gnome-doc-utils
-BuildRequires:	gnome-settings-daemon-devel >= 3.0.0
-BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.9
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	lcms2-devel >= 2.2
 BuildRequires:	libcanberra-gtk3-devel >= 0.10
-BuildRequires:	libnotify-devel >= 0.7.0
+BuildRequires:	libexif-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool
-BuildRequires:	libusb-devel
+BuildRequires:	mash-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.601
-BuildRequires:	sane-backends-devel
-BuildRequires:	udev-glib-devel
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	vte-devel >= 0.28.0
 BuildRequires:	xorg-lib-libXrandr-devel
 BuildRequires:	xorg-lib-libXxf86vm-devel
+BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
