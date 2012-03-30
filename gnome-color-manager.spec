@@ -1,25 +1,28 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
-Version:	3.2.2
-Release:	2
+Version:	3.4.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.2/%{name}-%{version}.tar.xz
-# Source0-md5:	2df1c411dd2f544cb085f53b3ea1d15b
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.4/%{name}-%{version}.tar.xz
+# Source0-md5:	dc8e97c93a29a7623f8e248ed784b77f
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.9
+BuildRequires:	automake >= 1:1.11
+BuildRequires:	clutter-devel >= 1.10.0
+BuildRequires:	clutter-gtk-devel
 BuildRequires:	colord-devel >= 0.1.12
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
 BuildRequires:	exiv2-devel
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.30.0
+BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gnome-common
+BuildRequires:	gnome-desktop-devel >= 3.0.0
 BuildRequires:	gnome-doc-utils
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.9
-BuildRequires:	intltool >= 0.35.0
+BuildRequires:	intltool >= 0.40.0
 BuildRequires:	lcms2-devel >= 2.2
 BuildRequires:	libcanberra-gtk3-devel >= 0.10
 BuildRequires:	libexif-devel
@@ -97,9 +100,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gcm-inspect
 %attr(755,root,root) %{_bindir}/gcm-picker
 %attr(755,root,root) %{_bindir}/gcm-viewer
+%attr(755,root,root) %{_libexecdir}/gcm-calibrate-helper
 %attr(755,root,root) %{_libexecdir}/gcm-helper-exiv
 %{_datadir}/gnome-color-manager
-%{_datadir}/dbus-1/services/org.gnome.ColorManager.service
 %{_desktopdir}/gcm-calibrate.desktop
 %{_desktopdir}/gcm-import.desktop
 %{_desktopdir}/gcm-picker.desktop
