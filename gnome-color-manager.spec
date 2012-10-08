@@ -1,17 +1,18 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
-Version:	3.4.2
+Version:	3.6.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.4/%{name}-%{version}.tar.xz
-# Source0-md5:	9c9e84d17a9a5d2b6e6d078f924095b8
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.6/%{name}-%{version}.tar.xz
+# Source0-md5:	df2dfeb49f2c887575046d9fc45a9211
+Patch0:		%{name}-build.patch
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.10.0
 BuildRequires:	clutter-gtk-devel
-BuildRequires:	colord-devel >= 0.1.12
+BuildRequires:	colord-gtk-devel >= 0.1.12
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
 BuildRequires:	exiv2-devel
@@ -55,6 +56,7 @@ generate color profiles.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -100,7 +102,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gcm-inspect
 %attr(755,root,root) %{_bindir}/gcm-picker
 %attr(755,root,root) %{_bindir}/gcm-viewer
-%attr(755,root,root) %{_libexecdir}/gcm-calibrate-helper
 %attr(755,root,root) %{_libexecdir}/gcm-helper-exiv
 %{_datadir}/gnome-color-manager
 %{_desktopdir}/gcm-calibrate.desktop
