@@ -1,18 +1,18 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
-Version:	3.6.0
-Release:	2
+Version:	3.8.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	df2dfeb49f2c887575046d9fc45a9211
-Patch0:		%{name}-build.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.8/%{name}-%{version}.tar.xz
+# Source0-md5:	60eb5801564edbcec4907dc975a7f5b0
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.10.0
 BuildRequires:	clutter-gtk-devel
-BuildRequires:	colord-gtk-devel >= 0.1.12
+BuildRequires:	colord-devel >= 0.1.28
+BuildRequires:	colord-gtk-devel >= 0.1.20
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
 BuildRequires:	exiv2-devel
@@ -41,7 +41,7 @@ BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
-Requires:	colord >= 0.1.12
+Requires:	colord >= 0.1.28
 Requires:	dconf
 Requires:	hicolor-icon-theme
 Requires:	polkit-gnome
@@ -56,7 +56,6 @@ generate color profiles.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
