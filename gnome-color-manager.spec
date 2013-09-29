@@ -1,17 +1,17 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
-Version:	3.8.2
+Version:	3.10.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.8/%{name}-%{version}.tar.xz
-# Source0-md5:	622c9ccccae1c668fb1f0ef31d214b66
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.10/%{name}-%{version}.tar.xz
+# Source0-md5:	dac161c8116c5dc5e0099630423ffa45
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	clutter-devel >= 1.10.0
+BuildRequires:	clutter-devel >= 1.12.0
 BuildRequires:	clutter-gtk-devel
-BuildRequires:	colord-devel >= 0.1.28
+BuildRequires:	colord-devel >= 0.1.34
 BuildRequires:	colord-gtk-devel >= 0.1.20
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
@@ -41,7 +41,7 @@ BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.26.0
-Requires:	colord >= 0.1.28
+Requires:	colord >= 0.1.34
 Requires:	dconf
 Requires:	hicolor-icon-theme
 Requires:	polkit-gnome
@@ -102,6 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gcm-picker
 %attr(755,root,root) %{_bindir}/gcm-viewer
 %attr(755,root,root) %{_libexecdir}/gcm-helper-exiv
+%{_datadir}/appdata/gcm-viewer.appdata.xml
 %{_datadir}/gnome-color-manager
 %{_desktopdir}/gcm-calibrate.desktop
 %{_desktopdir}/gcm-import.desktop
