@@ -1,11 +1,11 @@
 Summary:	Color management tools for GNOME
 Name:		gnome-color-manager
-Version:	3.12.2
+Version:	3.12.3
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	fe76eb6ca3a37b968e4c9b1a87010aa5
+# Source0-md5:	a6724e52e3bd046fa49c38e25a435d5c
 URL:		http://projects.gnome.org/gnome-color-manager/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
