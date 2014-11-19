@@ -7,6 +7,7 @@ Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.14/%{name}-%{version}.tar.xz
 # Source0-md5:	800ea5d887e3d93a7b6000d89f5e3508
 URL:		http://projects.gnome.org/gnome-color-manager/
+BuildRequires:	appstream-builder-devel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	clutter-devel >= 1.12.0
