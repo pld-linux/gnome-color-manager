@@ -17,7 +17,7 @@ BuildRequires:	colord-gtk-devel >= 0.1.20
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
 BuildRequires:	exiv2-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gnome-common
 BuildRequires:	gnome-desktop-devel >= 3.0.0
