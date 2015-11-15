@@ -1,0 +1,88 @@
+--- gnome-color-manager-3.18.0/data/icons/16x16/Makefile.am.orig	2015-04-22 12:18:32.000000000 +0200
++++ gnome-color-manager-3.18.0/data/icons/16x16/Makefile.am	2015-11-15 08:37:29.554534670 +0100
+@@ -9,7 +9,7 @@ icons_DATA = 			  	\
+ 
+ install-data-hook:
+ 	mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes;
+-	ln -fs $(iconsdir)/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
++	ln -fs ../apps/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
+ 
+ EXTRA_DIST =		\
+ 	$(icons_DATA)
+--- gnome-color-manager-3.18.0/data/icons/22x22/Makefile.am.orig	2015-04-22 12:18:32.000000000 +0200
++++ gnome-color-manager-3.18.0/data/icons/22x22/Makefile.am	2015-11-15 08:37:48.561200509 +0100
+@@ -9,7 +9,7 @@ icons_DATA = 			  	\
+ 
+ install-data-hook:
+ 	mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes;
+-	ln -fs $(iconsdir)/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
++	ln -fs ../apps/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
+ 
+ EXTRA_DIST =		\
+ 	$(icons_DATA)
+--- gnome-color-manager-3.18.0/data/icons/24x24/Makefile.am.orig	2015-04-22 12:18:32.000000000 +0200
++++ gnome-color-manager-3.18.0/data/icons/24x24/Makefile.am	2015-11-15 08:38:05.651199278 +0100
+@@ -9,7 +9,7 @@ icons_DATA = 			  	\
+ 
+ install-data-hook:
+ 	mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes;
+-	ln -fs $(iconsdir)/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
++	ln -fs ../apps/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
+ 
+ EXTRA_DIST =		\
+ 	$(icons_DATA)
+--- gnome-color-manager-3.18.0/data/icons/256x256/Makefile.am.orig	2015-04-22 12:18:32.000000000 +0200
++++ gnome-color-manager-3.18.0/data/icons/256x256/Makefile.am	2015-11-15 08:38:17.937865942 +0100
+@@ -9,7 +9,7 @@ icons_DATA = 			  	\
+ 
+ install-data-hook:
+ 	mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes;
+-	ln -fs $(iconsdir)/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
++	ln -fs ../apps/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
+ 
+ EXTRA_DIST =		\
+ 	$(icons_DATA)
+--- gnome-color-manager-3.18.0/data/icons/32x32/Makefile.am.orig	2015-04-22 12:18:32.000000000 +0200
++++ gnome-color-manager-3.18.0/data/icons/32x32/Makefile.am	2015-11-15 08:38:30.904532080 +0100
+@@ -9,7 +9,7 @@ icons_DATA = 			  	\
+ 
+ install-data-hook:
+ 	mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes;
+-	ln -fs $(iconsdir)/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
++	ln -fs ../apps/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
+ 
+ EXTRA_DIST =		\
+ 	$(icons_DATA)
+--- gnome-color-manager-3.18.0/data/icons/48x48/Makefile.am.orig	2015-04-22 12:18:32.000000000 +0200
++++ gnome-color-manager-3.18.0/data/icons/48x48/Makefile.am	2015-11-15 08:38:43.261198508 +0100
+@@ -9,7 +9,7 @@ icons_DATA = 			  	\
+ 
+ install-data-hook:
+ 	mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes;
+-	ln -fs $(iconsdir)/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
++	ln -fs ../apps/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
+ 
+ EXTRA_DIST =		\
+ 	$(icons_DATA)
+--- gnome-color-manager-3.18.0/data/icons/64x64/Makefile.am.orig	2015-04-22 12:18:32.000000000 +0200
++++ gnome-color-manager-3.18.0/data/icons/64x64/Makefile.am	2015-11-15 08:39:10.224530429 +0100
+@@ -9,7 +9,7 @@ icons_DATA = 			  	\
+ 
+ install-data-hook:
+ 	mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes;
+-	ln -fs $(iconsdir)/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
++	ln -fs ../apps/gnome-color-manager.png $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.png;
+ 
+ EXTRA_DIST =		\
+ 	$(icons_DATA)
+--- gnome-color-manager-3.18.0/data/icons/scalable/Makefile.am.orig	2015-04-22 12:18:32.000000000 +0200
++++ gnome-color-manager-3.18.0/data/icons/scalable/Makefile.am	2015-11-15 08:35:22.674540143 +0100
+@@ -14,7 +14,7 @@ appicons_DATA = 	 		\
+ 
+ install-data-hook:
+ 	mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes;
+-	ln -fs $(iconsdir)/gnome-color-manager.svg $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.svg;
++	ln -fs ../apps/gnome-color-manager.svg $(DESTDIR)$(DATADIR)/icons/hicolor/$(size)/mimetypes/application-vnd.iccprofile.svg;
+ 
+ EXTRA_DIST =				\
+ 	$(icons_DATA)			\
