@@ -1,12 +1,12 @@
 Summary:	Color management tools for GNOME
 Summary(pl.UTF-8):	Narzędzia do zarządzania kolorami dla GNOME
 Name:		gnome-color-manager
-Version:	3.18.0
+Version:	3.20.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	2449922874fc93801dc8cd41b2528090
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.20/%{name}-%{version}.tar.xz
+# Source0-md5:	e9900077c337b6cb9879ef21bbf29a1f
 # rpm glob again has some problem with absolute symlinks (dead at the time of packaging);
 # use relative ones (they don't go across /)
 Patch0:		%{name}-symlinks.patch
@@ -16,7 +16,7 @@ URL:		https://github.com/GNOME/gnome-color-manager
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	colord-devel >= 0.1.34
+BuildRequires:	colord-devel >= 1.3.1
 BuildRequires:	colord-gtk-devel >= 0.1.20
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
@@ -43,7 +43,7 @@ BuildRequires:	yelp-tools
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.32.0
-Requires:	colord >= 0.1.34
+Requires:	colord >= 1.3.1
 Requires:	colord-gtk >= 0.1.20
 Requires:	glib2 >= 1:2.32.0
 Requires:	hicolor-icon-theme
