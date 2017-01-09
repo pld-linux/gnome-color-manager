@@ -1,12 +1,12 @@
 Summary:	Color management tools for GNOME
 Summary(pl.UTF-8):	Narzędzia do zarządzania kolorami dla GNOME
 Name:		gnome-color-manager
-Version:	3.20.0
+Version:	3.22.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.20/%{name}-%{version}.tar.xz
-# Source0-md5:	e9900077c337b6cb9879ef21bbf29a1f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	436139955795313e8c776297359af704
 # rpm glob again has some problem with absolute symlinks (dead at the time of packaging);
 # use relative ones (they don't go across /)
 Patch0:		%{name}-symlinks.patch
@@ -113,12 +113,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gcm-picker
 %attr(755,root,root) %{_bindir}/gcm-viewer
 %attr(755,root,root) %{_libexecdir}/gcm-helper-exiv
-%{_datadir}/appdata/gcm-viewer.appdata.xml
+%{_datadir}/appdata/org.gnome.ColorProfileViewer.appdata.xml
 %{_datadir}/gnome-color-manager
 %{_desktopdir}/gcm-calibrate.desktop
 %{_desktopdir}/gcm-import.desktop
 %{_desktopdir}/gcm-picker.desktop
-%{_desktopdir}/gcm-viewer.desktop
+%{_desktopdir}/org.gnome.ColorProfileViewer.desktop
 %{_iconsdir}/hicolor/*x*/apps/gnome-color-manager.png
 %{_iconsdir}/hicolor/*/mimetypes/application-vnd.iccprofile.png
 %{_iconsdir}/hicolor/scalable/apps/gnome-color-manager.svg
