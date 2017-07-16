@@ -1,12 +1,12 @@
 Summary:	Color management tools for GNOME
 Summary(pl.UTF-8):	Narzędzia do zarządzania kolorami dla GNOME
 Name:		gnome-color-manager
-Version:	3.22.2
+Version:	3.24.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.22/%{name}-%{version}.tar.xz
-# Source0-md5:	436139955795313e8c776297359af704
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.24/%{name}-%{version}.tar.xz
+# Source0-md5:	47b7f7ef50e9e28f07db14c604ef08c9
 # rpm glob again has some problem with absolute symlinks (dead at the time of packaging);
 # use relative ones (they don't go across /)
 Patch0:		%{name}-symlinks.patch
@@ -21,15 +21,15 @@ BuildRequires:	colord-gtk-devel >= 0.1.20
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
 BuildRequires:	exiv2-devel
-BuildRequires:	gettext-tools
+BuildRequires:	gettext-tools >= 0.19.7
 BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gnome-common
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.9
-BuildRequires:	intltool >= 0.40.0
 BuildRequires:	lcms2-devel >= 2.2
 BuildRequires:	libcanberra-gtk3-devel >= 0.10
 BuildRequires:	libexif-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool >= 2:2
 BuildRequires:	libxslt-progs
@@ -70,7 +70,6 @@ kolorów.
 
 %build
 %{__libtoolize}
-%{__intltoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
