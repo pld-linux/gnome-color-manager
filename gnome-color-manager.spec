@@ -1,21 +1,15 @@
 Summary:	Color management tools for GNOME
 Summary(pl.UTF-8):	Narzędzia do zarządzania kolorami dla GNOME
 Name:		gnome-color-manager
-Version:	3.24.0
-Release:	2
+Version:	3.30.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.24/%{name}-%{version}.tar.xz
-# Source0-md5:	47b7f7ef50e9e28f07db14c604ef08c9
-# rpm glob again has some problem with absolute symlinks (dead at the time of packaging);
-# use relative ones (they don't go across /)
-Patch0:		%{name}-symlinks.patch
-# dead, wiki.gnome.org GnomeColorManager page is in Attic too
-#URL:		http://projects.gnome.org/gnome-color-manager/
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.30/%{name}-%{version}.tar.xz
+# Source0-md5:	f1caa9d4ece97e21b4ff1147201b6dd3
+Patch0:		exiv2-0.27.patch
 URL:		https://github.com/GNOME/gnome-color-manager
 BuildRequires:	appstream-glib-devel
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
 BuildRequires:	colord-devel >= 1.3.1
 BuildRequires:	colord-gtk-devel >= 0.1.20
 BuildRequires:	docbook-dtd41-sgml
@@ -31,8 +25,9 @@ BuildRequires:	libcanberra-gtk3-devel >= 0.10
 BuildRequires:	libexif-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel
-BuildRequires:	libtool >= 2:2
 BuildRequires:	libxslt-progs
+BuildRequires:	meson
+BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.601
@@ -69,22 +64,14 @@ kolorów.
 %patch0 -p1
 
 %build
-%{__libtoolize}
-%{__aclocal} -I m4
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--disable-silent-rules \
-	--disable-schemas-compile \
-	--disable-static
-%{__make}
+%meson build
+
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{name} --with-gnome
 
@@ -105,23 +92,21 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog MAINTAINERS NEWS README
+%doc AUTHORS MAINTAINERS README
 %attr(755,root,root) %{_bindir}/gcm-calibrate
 %attr(755,root,root) %{_bindir}/gcm-import
 %attr(755,root,root) %{_bindir}/gcm-inspect
 %attr(755,root,root) %{_bindir}/gcm-picker
 %attr(755,root,root) %{_bindir}/gcm-viewer
 %attr(755,root,root) %{_libexecdir}/gcm-helper-exiv
-%{_datadir}/appdata/org.gnome.ColorProfileViewer.appdata.xml
+%{_datadir}/metainfo/org.gnome.ColorProfileViewer.appdata.xml
 %{_datadir}/gnome-color-manager
 %{_desktopdir}/gcm-calibrate.desktop
 %{_desktopdir}/gcm-import.desktop
 %{_desktopdir}/gcm-picker.desktop
 %{_desktopdir}/org.gnome.ColorProfileViewer.desktop
 %{_iconsdir}/hicolor/*x*/apps/gnome-color-manager.png
-%{_iconsdir}/hicolor/*/mimetypes/application-vnd.iccprofile.png
 %{_iconsdir}/hicolor/scalable/apps/gnome-color-manager.svg
-%{_iconsdir}/hicolor/scalable/mimetypes/application-vnd.iccprofile.svg
 %{_mandir}/man1/gcm-calibrate.1*
 %{_mandir}/man1/gcm-import.1*
 %{_mandir}/man1/gcm-inspect.1*
