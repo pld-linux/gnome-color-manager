@@ -1,15 +1,13 @@
 Summary:	Color management tools for GNOME
 Summary(pl.UTF-8):	Narzędzia do zarządzania kolorami dla GNOME
 Name:		gnome-color-manager
-Version:	3.30.0
+Version:	3.32.0
 Release:	1
-License:	GPL v2
+License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.30/%{name}-%{version}.tar.xz
-# Source0-md5:	f1caa9d4ece97e21b4ff1147201b6dd3
-Patch0:		exiv2-0.27.patch
-URL:		https://github.com/GNOME/gnome-color-manager
-BuildRequires:	appstream-glib-devel
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.32/%{name}-%{version}.tar.xz
+# Source0-md5:	e6de219a25ac16630aca552936611c15
+URL:		https://gitlab.gnome.org/GNOME/gnome-color-manager
 BuildRequires:	colord-devel >= 1.3.1
 BuildRequires:	colord-gtk-devel >= 0.1.20
 BuildRequires:	docbook-dtd41-sgml
@@ -17,20 +15,19 @@ BuildRequires:	docbook-utils
 BuildRequires:	exiv2-devel
 BuildRequires:	gettext-tools >= 0.19.7
 BuildRequires:	glib2-devel >= 1:2.32.0
-BuildRequires:	gnome-common
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.9
 BuildRequires:	lcms2-devel >= 2.2
 BuildRequires:	libcanberra-gtk3-devel >= 0.10
 BuildRequires:	libexif-devel
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtiff-devel
+BuildRequires:	libtiff-devel >= 4
 BuildRequires:	libxslt-progs
-BuildRequires:	meson
-BuildRequires:	ninja
+BuildRequires:	meson >= 0.46.0
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
-BuildRequires:	rpmbuild(macros) >= 1.601
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vte-devel >= 0.28.0
 BuildRequires:	xz
@@ -61,7 +58,6 @@ kolorów.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %meson build
@@ -99,8 +95,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gcm-picker
 %attr(755,root,root) %{_bindir}/gcm-viewer
 %attr(755,root,root) %{_libexecdir}/gcm-helper-exiv
-%{_datadir}/metainfo/org.gnome.ColorProfileViewer.appdata.xml
 %{_datadir}/gnome-color-manager
+%{_datadir}/metainfo/org.gnome.ColorProfileViewer.appdata.xml
 %{_desktopdir}/gcm-calibrate.desktop
 %{_desktopdir}/gcm-import.desktop
 %{_desktopdir}/gcm-picker.desktop
