@@ -1,15 +1,14 @@
 Summary:	Color management tools for GNOME
 Summary(pl.UTF-8):	Narzędzia do zarządzania kolorami dla GNOME
 Name:		gnome-color-manager
-Version:	3.32.0
+Version:	3.36.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.32/%{name}-%{version}.tar.xz
-# Source0-md5:	e6de219a25ac16630aca552936611c15
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	c5360705a68e88455b1801200e9aaa2e
 URL:		https://gitlab.gnome.org/GNOME/gnome-color-manager
 BuildRequires:	colord-devel >= 1.3.1
-BuildRequires:	colord-gtk-devel >= 0.1.20
 BuildRequires:	docbook-dtd41-sgml
 BuildRequires:	docbook-utils
 BuildRequires:	exiv2-devel
@@ -29,19 +28,16 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	vte-devel >= 0.28.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.32.0
 Requires:	colord >= 1.3.1
-Requires:	colord-gtk >= 0.1.20
 Requires:	glib2 >= 1:2.32.0
 Requires:	hicolor-icon-theme
 Requires:	lcms2 >= 2.2
 Requires:	libcanberra-gtk3 >= 0.10
-Requires:	vte >= 0.28.0
 Suggests:	shared-color-profiles
 Obsoletes:	gnome-color-manager-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -89,21 +85,17 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS MAINTAINERS README
-%attr(755,root,root) %{_bindir}/gcm-calibrate
 %attr(755,root,root) %{_bindir}/gcm-import
 %attr(755,root,root) %{_bindir}/gcm-inspect
 %attr(755,root,root) %{_bindir}/gcm-picker
 %attr(755,root,root) %{_bindir}/gcm-viewer
-%attr(755,root,root) %{_libexecdir}/gcm-helper-exiv
 %{_datadir}/gnome-color-manager
 %{_datadir}/metainfo/org.gnome.ColorProfileViewer.appdata.xml
-%{_desktopdir}/gcm-calibrate.desktop
 %{_desktopdir}/gcm-import.desktop
 %{_desktopdir}/gcm-picker.desktop
 %{_desktopdir}/org.gnome.ColorProfileViewer.desktop
 %{_iconsdir}/hicolor/*x*/apps/gnome-color-manager.png
 %{_iconsdir}/hicolor/scalable/apps/gnome-color-manager.svg
-%{_mandir}/man1/gcm-calibrate.1*
 %{_mandir}/man1/gcm-import.1*
 %{_mandir}/man1/gcm-inspect.1*
 %{_mandir}/man1/gcm-picker.1*
