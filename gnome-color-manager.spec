@@ -1,12 +1,12 @@
 Summary:	Color management tools for GNOME
 Summary(pl.UTF-8):	Narzędzia do zarządzania kolorami dla GNOME
 Name:		gnome-color-manager
-Version:	3.36.0
+Version:	3.36.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-color-manager/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	c5360705a68e88455b1801200e9aaa2e
+Source0:	https://download.gnome.org/sources/gnome-color-manager/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	b23a411d3ab754da6ebc967716a971dc
 URL:		https://gitlab.gnome.org/GNOME/gnome-color-manager
 BuildRequires:	colord-devel >= 1.3.1
 BuildRequires:	docbook-dtd41-sgml
@@ -14,7 +14,7 @@ BuildRequires:	docbook-utils
 BuildRequires:	exiv2-devel
 BuildRequires:	gettext-tools >= 0.19.7
 BuildRequires:	glib2-devel >= 1:2.32.0
-BuildRequires:	gtk+3-devel >= 3.0.0
+BuildRequires:	gtk+3-devel >= 3.4
 BuildRequires:	gtk-doc >= 1.9
 BuildRequires:	lcms2-devel >= 2.2
 BuildRequires:	libcanberra-gtk3-devel >= 0.10
@@ -35,11 +35,12 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.32.0
 Requires:	colord >= 1.3.1
 Requires:	glib2 >= 1:2.32.0
+Requires:	gtk+3 >= 3.4
 Requires:	hicolor-icon-theme
 Requires:	lcms2 >= 2.2
 Requires:	libcanberra-gtk3 >= 0.10
 Suggests:	shared-color-profiles
-Obsoletes:	gnome-color-manager-devel
+Obsoletes:	gnome-color-manager-devel < 3.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
